@@ -15,11 +15,9 @@ router.post("/subscribe", function(req, res, next) {
   // 2. Subscribe the user to the mailing list
   // 3. Send a confirmation email
 
-console.log(namedict);
-
-if(namedict.includes(name.toLowerCase())){
+if(namedict.includes(name)){
   res.render("error", {
-    title: "Error : 503",
+    title: "Already Registered",
     name,
     email
   });

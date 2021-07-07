@@ -15,11 +15,11 @@ router.post("/subscribe", function(req, res, next) {
   // 2. Subscribe the user to the mailing list
   // 3. Send a confirmation email
 
-console.log(namedict);
+namedict.push(name);
 
-if(namedict.includes(name.toLowerCase())){
+if(namedict.includes(name)){
   res.render("error", {
-    title: "Error : 503",
+    title: "Banu Babu is not allowed",
     name,
     email
   });
@@ -27,7 +27,7 @@ if(namedict.includes(name.toLowerCase())){
 }
 
 else{
-  namedict.push(name);
+
   res.render("subscribed", {
     title: "You are subscribed",
     name,

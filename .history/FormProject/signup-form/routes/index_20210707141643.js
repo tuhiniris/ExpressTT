@@ -17,7 +17,7 @@ router.post("/subscribe", function(req, res, next) {
 
 console.log(namedict);
 
-if(namedict.includes(name.toLowerCase())){
+if(namedict.includes(name)){
   res.render("error", {
     title: "Error : 503",
     name,

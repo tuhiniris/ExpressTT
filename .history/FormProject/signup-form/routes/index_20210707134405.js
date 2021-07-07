@@ -13,7 +13,8 @@ router.post("/subscribe", function(req, res, next) {
   // 2. Subscribe the user to the mailing list
   // 3. Send a confirmation email
 
-if(name.toLowerCase()==="banu"){
+if(name==="banu"){
+
   res.render("error", {
     title: "Banu Babu is not allowed",
     name,

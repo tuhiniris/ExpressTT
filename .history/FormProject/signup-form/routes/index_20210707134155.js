@@ -13,9 +13,10 @@ router.post("/subscribe", function(req, res, next) {
   // 2. Subscribe the user to the mailing list
   // 3. Send a confirmation email
 
-if(name.toLowerCase()==="banu"){
-  res.render("error", {
-    title: "Banu Babu is not allowed",
+if(name==="banu"){
+
+  res.render("subscribed", {
+    title: "You are subscribed",
     name,
     email
   });

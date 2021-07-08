@@ -18,12 +18,28 @@ router.get('/register', function(req, res, next) {
 router.post("/registersuccess", function(req, res, next) {
   const { userid, userpass } = req.body;
   console.log(userid);
-  console.log(userpass);
+  console.log(userpass);  
+
+  // CHECKING VALIDATION OF QUERY
+
+  if(userdict.includes(userid)){
+  res.render("unsucess", {
+    title: "Error 505 : User in DB",
+    userid,
+    userpass
+  });
+}
+
+  else{
+  userdict.push(userid);
   res.render("success", {
     title: "Successfully Registered",
     userid,
     userpass
   });
+}
+
+
 });
 
 // End of Registration

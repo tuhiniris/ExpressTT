@@ -1,12 +1,33 @@
 var express = require('express');
 var router = express.Router();
 var namedict = [];
+var userdict = []; // Registration Value Holder
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ExpressJS Newsletter' });
 });
+
+// Starting Registration Form
+
+router.get('/register', function(req, res, next) {
+  res.render('registration', { title: 'Sign Up on ExpressJS' });
+});
+
+router.post("/registersuccess", function(req, res, next) {
+  const { userid, userpass } = req.body;
+  console.log(userid);
+  console.log(userpass);
+  res.render("success", {
+    title: "Successfully Registered",
+    userid,
+    userpass
+  });
+});
+
+// End of Registration
+
 
 router.post("/subscribe", function(req, res, next) {
   const { name, email } = req.body;
@@ -17,7 +38,7 @@ router.post("/subscribe", function(req, res, next) {
 
 console.log(namedict);
 
-if(namedict.includes(name.toLowerCase())){
+if(namedict.includes(name)){
   res.render("error", {
     title: "Error: 503",
     name,

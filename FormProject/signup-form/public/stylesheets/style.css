@@ -54,6 +54,34 @@ a{
   text-transform: uppercase;
 }
 
+.beautifysolo{
+  background-color: white;
+  left: 0;
+  line-height: 150%;
+  margin-top: -130px;
+  position: absolute;
+  text-align: left;  
+  width: 30%;
+  font-size: x-large;
+  font-weight: bold;
+  color: black;
+}
+
+.beautifydown{
+  background-color: white;
+  left: 0;
+  line-height: 150%;
+  margin-top: -50px;
+  position: absolute;
+  text-align: left;  
+  width: 30%;
+  font-size: x-large;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
+
+
 .coloriser{
   color: white;
 }
